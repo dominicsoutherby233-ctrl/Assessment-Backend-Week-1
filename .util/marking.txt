@@ -1,5 +1,5 @@
 ============================= test session starts ==============================
-platform linux -- Python 3.12.12, pytest-9.0.1, pluggy-1.6.0
+platform linux -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
 rootdir: /home/runner/work/Assessment-Backend-Week-1/Assessment-Backend-Week-1
 collected 112 items
 
@@ -7,7 +7,7 @@ days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
 days_api/test_date_functions.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF  [100%]
 
-============================= 112 failed in 0.33s ==============================
+============================= 112 failed in 0.34s ==============================
 ************* Module app
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
