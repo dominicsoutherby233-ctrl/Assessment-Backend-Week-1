@@ -84,7 +84,7 @@ def validate_param_values(dict:dict) -> None:
 
 def return_history_logs(number:int) -> list:
 
-    if number == 0:
+    if number == 0 or len(app_history) == 0:
         return [{}]
 
     if number >= len(app_history):
@@ -156,10 +156,12 @@ def return_response():
 
             logs = return_history_logs(number)
 
+            add_to_history(request)
+
             if logs == []:
                 return jsonify([{}]), 200
             
-            return jsonify(logs), 200
+            return jsonify(logs[::-1]), 200
             
         except ValueError as e:
             return jsonify({"error": e.args[0]}), 400
