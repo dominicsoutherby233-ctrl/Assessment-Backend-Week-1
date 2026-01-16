@@ -5,9 +5,9 @@ collected 112 items
 
 days_api/test_api.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF [ 45%]
 FFFFFFFFFFFFFFFFFFFFFF                                                   [ 65%]
-days_api/test_date_functions.py FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF  [100%]
+days_api/test_date_functions.py .......................................  [100%]
 
-============================= 112 failed in 0.34s ==============================
+======================== 73 failed, 39 passed in 0.32s =========================
 ************* Module app
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
@@ -17,16 +17,13 @@ days_api/app.py:9:0: W0611: Unused get_day_of_week_on imported from date_functio
 days_api/app.py:9:0: W0611: Unused get_days_between imported from date_functions (unused-import)
 days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
 ************* Module date_functions
-days_api/date_functions.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:6:24: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:10:21: W0613: Unused argument 'first' (unused-argument)
-days_api/date_functions.py:10:38: W0613: Unused argument 'last' (unused-argument)
-days_api/date_functions.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:14:23: W0613: Unused argument 'date_val' (unused-argument)
-days_api/date_functions.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/date_functions.py:18:20: W0613: Unused argument 'birthdate' (unused-argument)
+days_api/date_functions.py:32:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/date_functions.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/date_functions.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/date_functions.py:58:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/date_functions.py:11:8: W0621: Redefining name 'date' from outer scope (line 3) (redefined-outer-name)
+days_api/date_functions.py:13:8: W0707: Consider explicitly re-raising using 'except ValueError as exc' and 'raise ValueError('Unable to convert value to datetime.') from exc' (raise-missing-from)
 
 -----------------------------------
-Your code has been rated at 3.33/10
+Your code has been rated at 7.23/10
 
