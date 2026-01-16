@@ -26,11 +26,45 @@ def clear_history():
     """Clears the app history."""
     app_history.clear()
 
+def validate_between_request_json(dict:dict) -> None:
+    """raises error if keys aren't correct"""
+
+    if set(dict.keys()) != {"first","last"}:
+        raise ValueError({"error": True, "message": "Missing required data."})
+    
+    for value in dict.values():
+        value = str(value)
+        if len(value) != 10 or value[2] != "." or value[5] != ".":
+            raise ValueError(
+                {"error": True, "message": "Unable to convert value to datetime."})
+
 
 @app.get("/")
 def index():
     """Returns an API welcome messsage."""
     return jsonify({"message": "Welcome to the Days API."})
+
+@app.post("/between")
+def return_days_between():
+    """Returns day between two dates entered"""
+
+    first_last = request.json
+    try:
+        validate_between_request_json(first_last)
+
+        first_date = first_last["first"]
+        last_date = first_last["last"]
+
+        first_date = datetime.strptime(first_date, "%d.%m/%Y")
+        last_date = datetime.strptime(last_date, "%d.%m/%Y")
+
+        days_between = get_days_between(first_date, last_date)
+
+        return jsonify( {"days":days_between} )
+    except ValueError as e:
+        return jsonify( {"error":f"{e.args[0]["message"]}"} ), 400
+    
+
 
 
 if __name__ == "__main__":
