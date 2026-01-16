@@ -4,10 +4,10 @@ rootdir: /home/runner/work/Assessment-Backend-Week-1/Assessment-Backend-Week-1
 collected 112 items
 
 days_api/test_api.py .................................................FF [ 45%]
-FFF.FFFFFF.......FFFFF                                                   [ 65%]
+FFF.FFFFFF............                                                   [ 65%]
 days_api/test_date_functions.py .......................................  [100%]
 
-======================== 16 failed, 96 passed in 0.28s =========================
+======================== 11 failed, 101 passed in 0.28s ========================
 ************* Module app
 days_api/app.py:52:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -25,7 +25,8 @@ days_api/app.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:177:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:178:8: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:184:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:199:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:191:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:200:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:31:34: W0622: Redefining built-in 'dict' (redefined-builtin)
 days_api/app.py:39:26: W0622: Redefining built-in 'dict' (redefined-builtin)
 days_api/app.py:45:15: W0621: Redefining name 'request' from outer scope (line 7) (redefined-outer-name)
@@ -42,8 +43,6 @@ days_api/app.py:159:15: C1803: "logs == []" can be simplified to "not logs", if 
 days_api/app.py:167:12: W0106: Expression "(jsonify({'error': e.args[0]}), 400)" is assigned to nothing (expression-not-assigned)
 days_api/app.py:147:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
 days_api/app.py:176:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:180:8: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
-days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
 ************* Module date_functions
 days_api/date_functions.py:32:0: C0303: Trailing whitespace (trailing-whitespace)
@@ -54,5 +53,5 @@ days_api/date_functions.py:11:8: W0621: Redefining name 'date' from outer scope 
 days_api/date_functions.py:13:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise ValueError('Unable to convert value to datetime.') from exc' (raise-missing-from)
 
 -----------------------------------
-Your code has been rated at 6.91/10
+Your code has been rated at 6.99/10
 
