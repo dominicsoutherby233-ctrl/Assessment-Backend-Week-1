@@ -177,22 +177,23 @@ def return_age():
         
     try: 
 
-        date = request.args.to_dict()
+        dates = request.args.to_dict()
 
-        if date == {}:
+        if dates == {}:
             raise ValueError("Date parameter is required.")
         
-        validate_param_keys(date)
-        validate_param_values(date)
+        validate_param_keys(dates)
+        validate_param_values(dates)
 
-        values = date["date"].split("-")
+        values = dates["date"].split("-")
+
         int_values = [int(value) for value in values]
-
+        
         d_o_b = date(int_values[0], int_values[1], int_values[2])
 
         age = get_current_age(d_o_b)
 
-        return age, 200
+        return jsonify({"current_age": age}), 200
 
     except ValueError as e:
         return jsonify({"error": e.args[0]}), 400
