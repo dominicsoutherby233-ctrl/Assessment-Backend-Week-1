@@ -26,11 +26,13 @@ def clear_history():
     """Clears the app history."""
     app_history.clear()
 
+
+
 def validate_between_request_json(dict:dict) -> None:
     """raises error if keys aren't correct"""
 
     if set(dict.keys()) != {"first","last"}:
-        raise ValueError({"error": True, "message": "Missing required data."})
+        raise ValueError("Missing required data.")
 
 
 
@@ -38,7 +40,7 @@ def validate_request_json(dict: dict, keys:set[str]) -> None:
     """raises error if keys aren't correct"""
 
     if set(dict.keys()) != keys:
-        raise ValueError({"error": True, "message": "Missing required data."})
+        raise ValueError("Missing required data.")
 
 def get_number(request) -> int:
     """Returns number of values to return for history"""
@@ -49,13 +51,13 @@ def get_number(request) -> int:
         return 5
     
     if set(args.keys()) != {"number"}:
-        raise ValueError({"error":True, "message":"message 1"}, 400)
+        raise ValueError("message 1")
     
     try:
         int(args["number"])
     except Exception:
         raise ValueError(
-            {"error": "Number must be an integer between 1 and 20."}, 400)
+            "Number must be an integer between 1 and 20.")
 
     number = int(args["number"])
 
@@ -64,7 +66,20 @@ def get_number(request) -> int:
         return number
 
     raise ValueError(
-        {'error': 'Number must be an integer between 1 and 20.'}, 400)
+       'Number must be an integer between 1 and 20.')
+
+def validate_param_keys(dict:dict) -> None:
+
+    if set(dict.keys()) != {"date"}:
+        raise ValueError("Incorrect parameter given.")
+    
+def validate_param_values(dict:dict) -> None:
+
+    try:
+        datetime.strptime(dict["date"], "%Y-%m-%d")
+    except Exception:
+        raise ValueError("Value for data parameter is invalid.")
+
 
 
 def return_history_logs(number:int) -> list:
@@ -81,7 +96,7 @@ def return_history_logs(number:int) -> list:
 
 @app.get("/")
 def index():
-    """Returns an API welcome messsage."""
+    """Returns an API welcome message."""
     return jsonify({"message": "Welcome to the Days API."})
 
 @app.post("/between")
@@ -105,7 +120,7 @@ def return_days_between():
         return jsonify( {"days":days_between} ), 200
     
     except ValueError as e:
-        return jsonify( {"error":f"{e.args[0]["message"]}"} ), 400
+        return jsonify({"error": e.args[0]}),400
     
 @app.post('/weekday')
 def return_weekday():
@@ -126,7 +141,7 @@ def return_weekday():
 
         return jsonify({"weekday":day_name}), 200
     except ValueError as e:
-        return jsonify({"error": f"{e.args[0]["message"]}"}), 400
+        return jsonify({"error": e.args[0]}), 400
 
 @app.route("/history", methods = ["GET","DELETE"])
 def return_response():
@@ -135,24 +150,21 @@ def return_response():
         return jsonify([]), 404
     
     if request.method == "GET":
-
-        print(request.args.to_dict())
         
         try:
             number = get_number(request)
-
-            print(number,'number')
 
             logs = return_history_logs(number)
 
             if logs == []:
                 return jsonify([{}]), 200
+            
             return jsonify(logs), 200
             
         except ValueError as e:
-            return jsonify(e.args[0]), e.args[1]
+            return jsonify({"error": e.args[0]}), 400
         except TypeError as e:
-            return jsonify(e.args[0]), e.args[1]
+            jsonify({"error": e.args[0]}), 400
     
     if request.method == "DELETE":
 
@@ -160,6 +172,30 @@ def return_response():
 
         return jsonify({"status": "History cleared"}), 200
         
+@app.get("/current_age")
+def return_age():
+        
+    try: 
+
+        date = request.args.to_dict()
+
+        if date == {}:
+            raise ValueError("Date parameter is required.")
+        
+        validate_param_keys(date)
+        validate_param_values(date)
+
+        values = date["date"].split("-")
+        int_values = [int(value) for value in values]
+
+        d_o_b = date(int_values[0], int_values[1], int_values[2])
+
+        age = get_current_age(d_o_b)
+
+        return age, 200
+
+    except ValueError as e:
+        return jsonify({"error": e.args[0]}), 400
         
 
 
