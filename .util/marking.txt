@@ -3,44 +3,56 @@ platform linux -- Python 3.12.12, pytest-9.0.2, pluggy-1.6.0
 rootdir: /home/runner/work/Assessment-Backend-Week-1/Assessment-Backend-Week-1
 collected 112 items
 
-days_api/test_api.py ......FFFF...................FFFFF...............FF [ 45%]
-FFF.FFFFFFFFFFFFFFFFFF                                                   [ 65%]
+days_api/test_api.py .................................................FF [ 45%]
+FFF.FFFFFF.......FFFFF                                                   [ 65%]
 days_api/test_date_functions.py .......................................  [100%]
 
-======================== 32 failed, 80 passed in 0.32s =========================
+======================== 16 failed, 96 passed in 0.28s =========================
 ************* Module app
-days_api/app.py:50:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:53:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:79:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:106:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:109:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:119:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:136:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:140:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:52:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:55:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:75:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:94:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:121:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:124:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:134:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:151:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:156:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:162:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:153:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:161:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/app.py:163:0: C0303: Trailing whitespace (trailing-whitespace)
-days_api/app.py:29:34: W0622: Redefining built-in 'dict' (redefined-builtin)
-days_api/app.py:37:26: W0622: Redefining built-in 'dict' (redefined-builtin)
-days_api/app.py:43:15: W0621: Redefining name 'request' from outer scope (line 7) (redefined-outer-name)
-days_api/app.py:57:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise ValueError({'error': 'Number must be an integer between 1 and 20.'}, 400) from exc' (raise-missing-from)
-days_api/app.py:70:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:120:8: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
-days_api/app.py:132:0: C0116: Missing function or method docstring (missing-function-docstring)
-days_api/app.py:148:15: C1803: "logs == []" can be simplified to "not logs", if it is strictly a sequence, as an empty list is falsey (use-implicit-booleaness-not-comparison)
-days_api/app.py:132:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+days_api/app.py:168:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:174:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:177:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:178:8: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:184:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:199:0: C0303: Trailing whitespace (trailing-whitespace)
+days_api/app.py:31:34: W0622: Redefining built-in 'dict' (redefined-builtin)
+days_api/app.py:39:26: W0622: Redefining built-in 'dict' (redefined-builtin)
+days_api/app.py:45:15: W0621: Redefining name 'request' from outer scope (line 7) (redefined-outer-name)
+days_api/app.py:59:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise ValueError('Number must be an integer between 1 and 20.') from exc' (raise-missing-from)
+days_api/app.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:71:24: W0622: Redefining built-in 'dict' (redefined-builtin)
+days_api/app.py:76:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:76:26: W0622: Redefining built-in 'dict' (redefined-builtin)
+days_api/app.py:81:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise ValueError('Value for data parameter is invalid.') from exc' (raise-missing-from)
+days_api/app.py:85:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:135:8: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
+days_api/app.py:147:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:159:15: C1803: "logs == []" can be simplified to "not logs", if it is strictly a sequence, as an empty list is falsey (use-implicit-booleaness-not-comparison)
+days_api/app.py:167:12: W0106: Expression "(jsonify({'error': e.args[0]}), 400)" is assigned to nothing (expression-not-assigned)
+days_api/app.py:147:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+days_api/app.py:176:0: C0116: Missing function or method docstring (missing-function-docstring)
+days_api/app.py:180:8: W0621: Redefining name 'date' from outer scope (line 5) (redefined-outer-name)
 days_api/app.py:5:0: W0611: Unused date imported from datetime (unused-import)
 days_api/app.py:7:0: W0611: Unused Response imported from flask (unused-import)
-days_api/app.py:9:0: W0611: Unused get_current_age imported from date_functions (unused-import)
 ************* Module date_functions
 days_api/date_functions.py:32:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/date_functions.py:43:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/date_functions.py:49:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/date_functions.py:58:0: C0303: Trailing whitespace (trailing-whitespace)
 days_api/date_functions.py:11:8: W0621: Redefining name 'date' from outer scope (line 3) (redefined-outer-name)
-days_api/date_functions.py:13:8: W0707: Consider explicitly re-raising using 'except ValueError as exc' and 'raise ValueError('Unable to convert value to datetime.') from exc' (raise-missing-from)
+days_api/date_functions.py:13:8: W0707: Consider explicitly re-raising using 'except Exception as exc' and 'raise ValueError('Unable to convert value to datetime.') from exc' (raise-missing-from)
 
 -----------------------------------
-Your code has been rated at 7.41/10
+Your code has been rated at 6.91/10
 
